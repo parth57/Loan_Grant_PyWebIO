@@ -89,7 +89,7 @@ if __name__ == '__main__':
 
 #app.run(host='localhost', port=80)
 
-
+#visit http://localhost/tool to open the PyWebIO application.
 
 
 

@@ -13,7 +13,7 @@ model = pickle.load(open('Loan.pkl', 'rb'))
 app = Flask(__name__)
 
 def predict():
-    Dependents = select('Enter the number of dependents',['0','1','2','3+'])
+    Dependents = radio('Enter the number of dependents',options = ['0','1','2','3+'])
     if (Dependents == '0'):
         Dependents = 345
     elif (Dependents == '1'):
@@ -31,19 +31,19 @@ def predict():
 
     LoanAmountTerm = input('Enter the Loan Term(In Days):',input = NUMBER)
 
-    Credit_History = select('Whether the applicant had conducive credit history',['Yes','No'])
+    Credit_History = checkbox('Whether the applicant had conducive credit history',options = ['Yes','No'])
     if (Credit_History == 'Yes'):
         Credit_History = 1.0
     else:
         Credit_History = 0
 
-    Married = select('Whether the applicant is married:',['Yes','No'])
+    Married = checkbox('Whether the applicant is married:',options = ['Yes','No'])
     if (Married == 'Yes'):
         Married = 1
     else:
         Married = 0
 
-    Self_Employed = select('Whether the applicant is Self Employed:',['Yes','No'])
+    Self_Employed = checkbox('Whether the applicant is Self Employed:',options = ['Yes','No'])
     if (Self_Employed == 'Yes'):
         Self_Employed = 1.0
     else:
@@ -55,7 +55,7 @@ def predict():
     else:
         Gender =0
 
-    PropertyArea = select('Where is the Property Located',['Urban','Semiurban','Rural'])
+    PropertyArea = radio('Where is the Property Located',options = ['Urban','Semiurban','Rural'])
     if (PropertyArea == 'Urban'):
         Urban = 1
         Semiurban = 0
